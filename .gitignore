@@ -7,5 +7,5 @@ __pytestcache__/
 .DS_Store
 data_delight_venv/
 .pytest_cache/
-.coverage_report
+.coverage*
 

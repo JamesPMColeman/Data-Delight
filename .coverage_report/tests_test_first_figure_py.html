@@ -76,7 +76,8 @@
 <p id="n5" class="stm run hide_run"><a href="#n5">5</a></p>
 <p id="n6" class="pln"><a href="#n6">6</a></p>
 <p id="n7" class="stm run hide_run"><a href="#n7">7</a></p>
-<p id="n8" class="stm run hide_run"><a href="#n8">8</a></p>
+<p id="n8" class="pln"><a href="#n8">8</a></p>
+<p id="n9" class="stm run hide_run"><a href="#n9">9</a></p>
 
             </td>
             <td class="text">
@@ -86,8 +87,9 @@
 <p id="t4" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t5" class="stm run hide_run"><span class="key">class</span> <span class="nam">TestFirstFigure</span><span class="op">(</span><span class="nam">unittest</span><span class="op">.</span><span class="nam">TestCase</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t6" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t7" class="stm run hide_run">        <span class="key">def</span> <span class="nam">test_call_output_file</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t8" class="stm run hide_run">                <span class="key">pass</span><span class="strut">&nbsp;</span></p>
+<p id="t7" class="stm run hide_run">        <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'scripts.first_figure.show'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t8" class="pln">        <span class="key">def</span> <span class="nam">test_call_output_file</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_show</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t9" class="stm run hide_run">                <span class="key">pass</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -98,7 +100,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.4</a>,
-            created at 2020-05-05 15:54
+            created at 2020-05-05 16:55
         </p>
     </div>
 </div>

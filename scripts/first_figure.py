@@ -29,3 +29,6 @@ fig = figure(background_fill_color='gray',
 fig.grid.grid_line_color = 'red'
 # view the figure
 show(fig)
+
+if __name__ == '__main__':
+	main()

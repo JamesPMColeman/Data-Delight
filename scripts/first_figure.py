@@ -3,7 +3,7 @@ from bokeh.io import output_file
 from bokeh.plotting import figure, show
 
 # The figure wil be rendered into a static HTML file
-output_file('visuals/test_output_file.html',
+output_file('visuals.test_output_file.html',
 			title='Empty Bokeh Figure')
 
 # Set up a generic figure() object
@@ -26,6 +26,6 @@ fig = figure(background_fill_color='gray',
 			 )
 
 # Remove gridlines
-fig.grid.grid_line_color = None
+fig.grid.grid_line_color = 'red'
 # view the figure
 show(fig)

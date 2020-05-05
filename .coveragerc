@@ -1,0 +1,14 @@
+[run]
+
+branch = true
+cover_pylib = false
+omit = 
+	*/.local/*
+	/usr/*
+
+[report]
+
+[html]
+
+title = Data Delight Coverage Report
+directory = .coverage_report

@@ -6,4 +6,5 @@ __pytestcache__/
 # Distribution / packaging
 .DS_Store
 data_delight_venv/
+.pytest_cache/
 

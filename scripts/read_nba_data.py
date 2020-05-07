@@ -61,3 +61,26 @@ for _, row in nuggets.iterrows():
 
 nuggets['Win/Loss'] = win_loss
 
+nuggets_2 = (team_stats[(team_stats['teamAbbr'] == 'DEN') &
+		   			  	(team_stats['seasTyp'] == 'Regular')]
+						.loc[:, ['gmDate',
+								 'team2P%',
+								 'team3P%',
+								 'teamPTS',
+								 'opptPTS']]
+						.sort_values('gmDate'))
+
+nuggets_2['Game'] = range(1, len(nuggets_2)+1)
+
+win_loss = []
+for _, row in nuggets.iterrows():
+	if row['teamPTS'] > row['opptPTS']:
+		win_loss.append('W')
+	else:
+		win_loss.append('L')
+
+nuggets_2['Win/Loss'] = win_loss
+
+
+
+

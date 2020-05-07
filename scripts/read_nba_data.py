@@ -37,3 +37,27 @@ three_takers = three_takers[three_takers['play3PA'] >= 100]
 
 # Three point percentage
 three_takers['pct3PM'] = three_takers['play3PM'] / three_takers['play3PA']
+
+# Nuggets team stats
+nuggets = (team_stats[(team_stats['teamAbbr'] == 'DEN') &
+		   			  (team_stats['seasTyp'] == 'Regular')]
+		   			  .loc[:, ['gmDate',
+		   			  		   'teamPTS',
+		   			  		   'teamTRB',
+		   			  		   'teamAST',
+		   			  		   'teamTO',
+		   			  		   'opptAbbr',
+		   			  		   'opptPTS']]
+		   			  .sort_values('gmDate'))
+
+nuggets['Game'] = range(1, len(nuggets)+1)
+
+win_loss = []
+for _, row in nuggets.iterrows():
+	if row['teamPTS'] > row['opptPTS']:
+		win_loss.append('W')
+	else:
+		win_loss.append('L')
+
+nuggets['Win/Loss'] = win_loss
+

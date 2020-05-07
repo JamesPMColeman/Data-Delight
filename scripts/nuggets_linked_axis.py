@@ -1,5 +1,5 @@
 from bokeh.io import output_file
-from bokeh.models import ColumnDataSource, CategoricalColorMapper, Div
+from bokeh.models import ColumnDataSource, CategoricalColorMapper, Div, HoverTool
 from bokeh.layouts import gridplot, column 
 from bokeh.plotting import figure, show
 
@@ -12,6 +12,8 @@ nugget_stats = ColumnDataSource(nuggets)
 # Create categorical color mapper
 win_loss_mapper = CategoricalColorMapper(factors = ['W', 'L'],
 										  palette=['green', 'red'])
+
+hover_info = [('Opponent', '@opptAbbr')]
 
 stat_names = {'Points': 'teamPTS',
 			  'Assists': 'teamAST',
@@ -34,6 +36,16 @@ for stat_label, stat_col in stat_names.items():
 			 source=nugget_stats,
 			 width=0.9,
 			 color=dict(field='Win/Loss', transform=win_loss_mapper))
+
+	hover_glyph = fig.vbar(x='Game',
+			 top=stat_col,
+			 source=nugget_stats,
+			 width=0.9,
+			 alpha=0,
+			 hover_fill_color='lightgray',
+			 hover_fill_alpha=0.25)
+
+	fig.add_tools(HoverTool(tooltips=hover_info, renderers=[hover_glyph]))
 
 	stat_figs[stat_label] = fig
 
